@@ -8,6 +8,7 @@ const App = () => {
   const [firstOutput, setFirstOutput] = useState();
   const [secondOutput, setSecondOutput] = useState();
 
+  // transform string into an array of sorted unicode
   const getCharCodes = (string) => {
     let charCodeArr = [];
     for (let i = 0; i < string.length; i++) {
@@ -19,10 +20,12 @@ const App = () => {
     });
   };
 
+  //convert array of unicode to string
   const codeToString = (arr) => {
     return String.fromCharCode(...arr);
   };
 
+  //compare two string
   const findUncommon = (str1, str2) => {
     let res = [];
     for (let i = 0; i < str1.length; i++) {
@@ -30,10 +33,10 @@ const App = () => {
         res.push(str1[i]);
       }
     }
-
     return res.join("");
   };
 
+  //handling submit
   const handleSubmit = (event) => {
     event.preventDefault();
     setFirstfile("");
